@@ -4,7 +4,7 @@ CodingLanguagesAndProjects
 
 Bu basit Python programı, kullanıcının girdiği bir sayının asal sayı olup olmadığını kontrol eder.
 
-## Kullanım
+### Kullanım
 
 1. `prime_checker.py` dosyasını çalıştırın.
 2. Program, bir sayı girmenizi isteyecektir.
