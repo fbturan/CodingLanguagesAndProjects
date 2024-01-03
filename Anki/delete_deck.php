@@ -8,9 +8,11 @@ if ($conn->connect_error) {
 
 $deckName = $_GET["data"];
 
+// Delete the table and its content
 $sqlDeleteDeck = "DROP TABLE IF EXISTS $deckName";
 
 if ($conn->query($sqlDeleteDeck)) {
+    // Deletion successful, you can provide a response if desired
     echo "Success";
 } else {
     echo "Error: " . $conn->error;
@@ -18,7 +20,8 @@ if ($conn->query($sqlDeleteDeck)) {
 
 $conn->close();
 
+// Perform the redirect after all content has been sent
 header("Location: ind.php");
-exit();
+exit(); // Ensure that no further code is executed after the header redirect
 ?>
 

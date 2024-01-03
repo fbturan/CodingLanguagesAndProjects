@@ -1,3 +1,16 @@
+<?php 
+	$conn = new mysqli("localhost", "root", "", "anki_db");
+	session_start();
+	if (!empty($_SESSION["cloneDeckName"]))
+	{
+		echo "a";
+		$deckName = $_SESSION["cloneDeckName"];
+		$sql = "DROP TABLE $deckName";
+		$_SESSION["cloneDeckName"] = "";
+		$conn->query($sql);
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +34,7 @@
 
 	function PHPWithQueryStringstart(i) {
 		var dataToSend = document.getElementById(i).innerHTML;
-		window.location.href = 'start.php?data=' + encodeURIComponent(dataToSend);
+		window.location.href = 'copy.php?data=' + encodeURIComponent(dataToSend);
 	}
 
 	function PHPWithQueryStringdelete(i) {
@@ -32,19 +45,8 @@
 	function addDeck(deckName) {
 		window.location.href = 'add_deck.php?deck=' + encodeURIComponent(deckName);
 	}
-
-	function addCard(deckName) {
-		window.location.href = 'add_card.php?deck=' + encodeURIComponent(deckName);
-	}
-
-	function start(deckName) {
-		window.location.href = 'start.php?deck=' + encodeURIComponent(deckName);
-	}
-
-	function deleteDeck(deckName) {
-		window.location.href = 'delete_deck.php?deck=' + encodeURIComponent(deckName);
-	}
-
 </script>
+
+
 </body>
 </html>

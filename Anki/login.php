@@ -29,9 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $row['id'];
             header("Location: ind.php");
         } else {
+            // Kontrol 4: Girilen parola ile veritabanındaki parola eşleşmiyorsa hata mesajını yazdır
             echo "<p>Invalid password</p>";
         }
     } else {
+        // Kontrol 5: Kullanıcı bulunamazsa hata mesajını yazdır
         echo "<p>User not found</p>";
     }
 }

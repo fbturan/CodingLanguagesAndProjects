@@ -5,6 +5,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// Tabloyu sadece bir kez oluştur
 $query = "CREATE TABLE IF NOT EXISTS anki_users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     email TEXT NOT NULL,
