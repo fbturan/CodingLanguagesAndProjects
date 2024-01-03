@@ -30,7 +30,7 @@ Bu basit PHP ve MySQL tabanlı bir ezber yardım sitesidir. Kullanıcılar, e-po
 
 ## Kullanım
 
-1. `index.php` dosyasını bir PHP destekli web sunucusunda çalıştırın.
+1. dosyaları bir PHP destekli web sunucusunda çalıştırın.
 2. Kayıt olun veya giriş yapın.
 3. Hafıza kartı destesi ve kartlarınızı oluşturun ve yönetin.
 
